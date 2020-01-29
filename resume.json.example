@@ -1,0 +1,96 @@
+{
+  "name": "Jane Doe",
+  "social": [
+    {
+      "icon" : "linkedin.png",
+      "value": "linkedin.com/in/janedoe"
+    },
+    {
+      "icon" : "envelope.png",
+      "value" : "janedoe@gmail.com"
+    },
+    {
+      "icon" : "phone-alt.png",
+      "value": "123-456-7890"
+    },
+    {
+      "icon" : "stack-overflow.png",
+      "value" : "stackoverflow.com/u/1",
+      "url" : "https://stackoverflow.com/users/1"
+    },
+    {
+      "icon" : "codereview.png",
+      "value": "codereview.stackexchange.com/u/1"
+    },
+    {
+      "icon" : "github.png",
+      "value" : "github.com/janedoe"
+    }
+  ],
+  "profile": [
+    "Talk about your experience",
+    "Core competencies include: Microsoft Word, etc."
+  ],
+  "sections": [
+    {
+      "title": "Professional Experience",
+      "array": [
+        {
+          "title": "AMCE Corp (Demo Company) — Nowhere, USA.",
+          "description": "Full-Stack Developer",
+          "date": "2016 to Present",
+          "array": [
+            {
+              "title": "EXAMPLE: Purus in massa tempor nec feugiat nisl. Etiam non quam lacus suspendisse. ",
+              "array": [
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "Ipsum dolor sit amet consectetur adipiscing elit.",
+                "Et malesuada fames ac turpis egestas integer eget aliquet. Metus vulputate eu scelerisque felis imperdiet proin."
+              ]
+            }
+          ]
+        },
+      ]
+    },
+    {
+      "title": "Education",
+      "array": [
+        {
+          "title": "Master of Business Administration",
+          "description": "Test, Nowhere, USA",
+          "date": "Anticipated 2020"
+        },
+        {
+          "title": "Bachelor of Science, major in Chemistry",
+          "description": "Test, Nowhere, USA",
+          "date": "2015"
+        },
+        {
+          "title": "Associate of Science, major Biology",
+          "description": "Test, Nowhere, USA",
+          "date": "2010"
+        }
+      ]
+    },
+    {
+      "title": "Certifications",
+      "array": [
+        {
+          "title": "Super Smart",
+          "description": "Credential ID SS21413423.",
+          "date": "2009"
+        },
+      ]
+    },
+    {
+      "title": "Awards",
+      "array": [
+        {
+          "title": "Smarty Pants",
+          "description": "Purus in massa tempor nec feugiat nisl. Etiam non quam lacus suspendisse..",
+          "date": "2020"
+        }
+      ]
+    }
+  ]
+}
