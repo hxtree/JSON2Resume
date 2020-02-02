@@ -10,6 +10,9 @@
 
 require_once 'fpdf/fpdf.php';
 
+/**
+ * Class Resume
+ */
 class Resume extends FPDF
 {
     public $margin = [
@@ -241,14 +244,14 @@ class Resume extends FPDF
     {
 
         // print bullet
-        $char = is_null($char)  ? chr(149) : iconv('UTF-8', 'windows-1252', $char);
+        $char = ($char === null)  ? chr(149) : iconv('UTF-8', 'windows-1252', $char);
 
         $this->Cell($this->indent * $indent_amount, 4, $char, '', 0, 'R');
 
         // print indented list
         $indent_total = $this->indent * $indent_amount + $this->margin['left'];
         $this->SetX($indent_total);
-        if (is_null($date)) {
+        if ($date === null) {
             $this->MultiCell(0, 4, iconv('UTF-8', 'windows-1252', $array), 0, 'J', false);
             return;
         }
