@@ -8,10 +8,7 @@
  * file that was distributed with this source code.
  */
 
-require('fpdf/fpdf.php');
-
-error_reporting(-1);
-ini_set('display_errors', 'On');
+require_once 'fpdf/fpdf.php';
 
 class Resume extends FPDF
 {
@@ -53,11 +50,14 @@ class Resume extends FPDF
     function Header()
     {
         $this->page_count++;
+
         if ($this->page_count == 1) {
             $this->HeaderInitialPage();
-        } else {
-            $this->HeaderNotInitialPage();
+            return;
         }
+
+        $this->HeaderNotInitialPage();
+        return;
     }
 
     /**
@@ -77,9 +77,9 @@ class Resume extends FPDF
 
         foreach ($this->data->social as $social) {
             // envelope
-            $x = $this->GetX();
-            $y = $this->GetY();
-            $this->Image('images/' . $social->icon, $x + 1, $y + 1, 3, 3);
+            $x_pos = $this->GetX();
+            $y_pos = $this->GetY();
+            $this->Image('images/' . $social->icon, $x_pos + 1, $y_pos + 1, 3, 3);
             $this->SetX($x + 4);
 
             // print email
@@ -177,31 +177,31 @@ class Resume extends FPDF
     /**
      * Renders a resume section
      *
-     * @param $section1
+     * @param $section
      */
-    function Section($section1)
+    function Section($section)
     {
 
         $this->SetFont('San', 'B', 12);
-        $this->MultiCell($this->content_width, 7, strtoupper($section1->title) . ':', 0, 'L');
+        $this->MultiCell($this->content_width, 7, strtoupper($section->title) . ':', 0, 'L');
 
-        if (isset($section1->list)) {
-            $length = count($section1->list);
-            $i = 1;
-            foreach ($section1->list as $array) {
+        if (isset($section->list)) {
+            $length = count($section->list);
+            $counter = 1;
+            foreach ($section->list as $array) {
                 $this->SetFont('PragatiNarrow', '', 11);
                 $this->Cell($this->indent, 4, chr(149), '', 0, 'R');
                 $this->Cell($this->column_width - $this->indent, 4, $array, '', 0, 'L');
-                if ($i == 1) {
-                } else if ($i == $length) {
-                } else if (($i % 3) == 0) {
+                if ($counter == 1) {
+                } else if ($counter == $length) {
+                } else if (($counter % 3) == 0) {
                     $this->ln(4.4);
                 }
-                $i++;
+                $counter++;
             }
             $this->ln(4);
         } else {
-            foreach ($section1->array as $section2) {
+            foreach ($section->array as $section2) {
                 $this->SetFont('PragatiNarrow', 'B', 10);
                 $this->BulletItem(1, ' ', $section2->title, $section2->date);
                 $this->SetFont('PragatiNarrow', 'I', 8.5);
@@ -241,27 +241,26 @@ class Resume extends FPDF
     {
 
         // print bullet
-        if ($char == NULL) {
-            $char = chr(149);
-        } else {
-            $char = iconv('UTF-8', 'windows-1252', $char);
-        }
+        $char = is_null($char)  ? chr(149) : iconv('UTF-8', 'windows-1252', $char);
+
         $this->Cell($this->indent * $indent_amount, 4, $char, '', 0, 'R');
 
         // print indented list
         $indent_total = $this->indent * $indent_amount + $this->margin['left'];
         $this->SetX($indent_total);
-        if ($date == NULL) {
+        if (is_null($date)) {
             $this->MultiCell(0, 4, iconv('UTF-8', 'windows-1252', $array), 0, 'J', false);
-        } else {
-            $column_width = ($this->content_width - $this->indent * $indent_amount) / 2;
-
-            $this->SetFont('PragatiNarrow', 'B', 10);
-            $this->Cell($column_width, 4, iconv('UTF-8', 'windows-1252', $array), '', 0, 'L');
-            $this->SetFont('PragatiNarrow', '', 10);
-            $this->Cell($column_width, 4, $date, '', 0, 'R');
-            $this->ln();
+            return;
         }
+
+        $column_width = ($this->content_width - $this->indent * $indent_amount) / 2;
+
+        $this->SetFont('PragatiNarrow', 'B', 10);
+        $this->Cell($column_width, 4, iconv('UTF-8', 'windows-1252', $array), '', 0, 'L');
+        $this->SetFont('PragatiNarrow', '', 10);
+        $this->Cell($column_width, 4, $date, '', 0, 'R');
+        $this->ln();
+        return;
     }
 }
 
