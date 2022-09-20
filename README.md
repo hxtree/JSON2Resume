@@ -6,7 +6,8 @@ JSON2Resume converts a JSON into a PDF Resume. It makes use of the FPDF packaged
 
 ## Installation
 A valid PHP web server is required. Clone the repository. Create a copy of the example file. Edit the file and add your resume information to it. It is important that the file remains a valid JSON file.
-```BASH
+
+```bash
 git clone https://github.com/hxtree/JSON2Resume.git
 cd JSON2Resume
 cp resume.json.example resume.json

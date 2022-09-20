@@ -1,0 +1,8 @@
+{
+    "name": "hxtree/json2resume",
+    "description": "Resume generator.",
+    "keywords": [
+        "JSON", "PDF", "Resume"
+    ],
+    "type": "project"
+}

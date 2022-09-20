@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  php-fpm:
+    volumes:
+      - .:/application:cached
+      - vs-code-server:/var/www/.vscode-server
+    command: /bin/sh -c "while sleep 1000; do :; done"
+ 
+volumes:
+    vs-code-server:
