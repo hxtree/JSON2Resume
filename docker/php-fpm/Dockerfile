@@ -79,6 +79,8 @@ RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini" \
 COPY composer.json /application
 COPY composer.lock /application
 
+RUN composer install --no-interaction
+
 USER $user
 
 #######################################
@@ -92,7 +94,7 @@ ENV PATH="~/.composer/vendor/bin:./vendor/bin:${PATH}"
 
 COPY . /application
 
-# RUN composer install --no-dev --no-interaction
+RUN composer install --no-dev --no-interaction
 
 USER $user
 

@@ -2,16 +2,27 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d96205a06e2a45838b782cc23b07ea95)](https://app.codacy.com/manual/hxtree/JSON2Resume?utm_source=github.com&utm_medium=referral&utm_content=hxtree/JSON2Resume&utm_campaign=Badge_Grade_Dashboard)
 
-JSON2Resume converts a JSON into a PDF Resume. It makes use of the FPDF packaged, which is included.
+JSON2Resume converts a JSON into a PDF Resume.
+
+![Resume Example](/docs/images.png "Screenshot")
 
 ## Installation
+
 A valid PHP web server is required. Clone the repository. Create a copy of the example file. Edit the file and add your resume information to it. It is important that the file remains a valid JSON file.
 
-```bash
-git clone https://github.com/hxtree/JSON2Resume.git
-cd JSON2Resume
-cp resume.json.example resume.json
-vim resume.json
-```
 
-Lastly, run the included index.php file on your PHP web server to produce a PDF version of the resume.json file.
+1. Clone this repo using [Git](https://git-scm.com/downloads).
+    ```
+    git clone git@github.com:hxtree/monorepo.git
+    ```
+
+2. Install [Docker](https://docs.docker.com/get-docker/), [VSCode](https://code.visualstudio.com/), and the [Remote - Containers](https://code.visualstudio.com/docs/remote/containers-tutorial) extension.
+
+3. Open repo Project Folder using VSCode and build and connect to remote container.
+
+4. Create a resume file.
+    ```bash
+    cp resume.json.example resume.json
+    ```
+
+5. View service in browser [http://localhost](http://localhost)
