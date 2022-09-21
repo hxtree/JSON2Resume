@@ -1,0 +1,16 @@
+{
+	"name": "Existing Docker Compose (Extend)",
+	"dockerComposeFile": [
+		"../docker-compose.yml",
+		"docker-compose.yml"
+	],
+	"service": "php-fpm",
+	"workspaceFolder": "/application",
+	"settings": {},
+	"extensions": [],
+	// "forwardPorts": [],
+	// "runServices": [],
+	// "shutdownAction": "none",
+	// "postCreateCommand": "apt-get update && apt-get install -y curl",
+	"remoteUser": "root"
+}

@@ -1,0 +1,17 @@
+{
+    "name": "hxtree/json2resume",
+    "description": "Resume generator.",
+    "keywords": [
+        "JSON", "PDF", "Resume"
+    ],
+    "type": "project",
+    "require": {
+        "setasign/fpdf": "^1.8",
+        "friendsofphp/php-cs-fixer": "^3.11"
+    },
+    "autoload" :  {
+        "psr-4": {
+          "Hxtree\\Json2Resume\\": "src"
+        }
+    }
+}
