@@ -1,6 +1,6 @@
 # JSON2Resume
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d96205a06e2a45838b782cc23b07ea95)](https://app.codacy.com/manual/hxtree/JSON2Resume?utm_source=github.com&utm_medium=referral&utm_content=hxtree/JSON2Resume&utm_campaign=Badge_Grade_Dashboard)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d96205a06e2a45838b782cc23b07ea95)](https://app.codacy.com/gh/hxtree/JSON2Resume/)
 
 JSON2Resume converts a JSON into a PDF Resume.
 
