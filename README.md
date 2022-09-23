@@ -2,17 +2,14 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d96205a06e2a45838b782cc23b07ea95)](https://app.codacy.com/gh/hxtree/JSON2Resume/)
 
-JSON2Resume converts a JSON into a PDF Resume.
+JSON2Resume converts a JSON array into a PDF resume.
 
 ![Resume Example](https://github.com/hxtree/JSON2Resume/raw/master/docs/example.png "Screenshot")
 
 ## Installation
 
-A valid PHP web server is required. Clone the repository. Create a copy of the example file. Edit the file and add your resume information to it. It is important that the file remains a valid JSON file.
-
-
 1. Clone this repo using [Git](https://git-scm.com/downloads).
-    ```
+    ```bash
     git clone git@github.com:hxtree/JSON2Resume.git
     ```
 
