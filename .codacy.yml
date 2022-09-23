@@ -1,4 +1,3 @@
 exclude_paths:
-  - 'fpdf/**/*'
-  - 'fpdf/*'
+  - 'public/font/*'
   - '**/*.md'
