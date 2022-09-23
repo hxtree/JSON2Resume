@@ -4,7 +4,7 @@
 
 JSON2Resume converts a JSON into a PDF Resume.
 
-![Resume Example](/docs/images.png "Screenshot")
+![Resume Example](https://github.com/hxtree/JSON2Resume/raw/master/docs/example.png "Screenshot")
 
 ## Installation
 
@@ -13,7 +13,7 @@ A valid PHP web server is required. Clone the repository. Create a copy of the e
 
 1. Clone this repo using [Git](https://git-scm.com/downloads).
     ```
-    git clone git@github.com:hxtree/monorepo.git
+    ggit clone git@github.com:hxtree/JSON2Resume.git
     ```
 
 2. Install [Docker](https://docs.docker.com/get-docker/), [VSCode](https://code.visualstudio.com/), and the [Remote - Containers](https://code.visualstudio.com/docs/remote/containers-tutorial) extension.
