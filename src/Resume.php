@@ -119,26 +119,26 @@ class Resume extends \FPDF
     public function ThickLine($direction = 'up', $width = 100)
     {
         // print line
-        $x = $this->GetX() + ($this->content_width * (1 - $width / 100)) / 2;
-        $y = $this->GetY();
+        $x_pos = $this->GetX() + ($this->content_width * (1 - $width / 100)) / 2;
+        $y_pos = $this->GetY();
         $this->ln(1.71);
         $width = $this->content_width * $width / 100;
         switch ($direction) {
             case 'up':
                 $this->SetFillColor(0, 0, 0);
-                $this->Rect($x, $y, $width, 0.61, 'F');
+                $this->Rect($x_pos, $y_pos, $width, 0.61, 'F');
                 $this->SetFillColor(96, 96, 96);
-                $this->Rect($x, $y + 0.61, $width, 1, 'F');
+                $this->Rect($x_pos, $y_pos + 0.61, $width, 1, 'F');
                 $this->SetFillColor(192, 192, 192);
-                $this->Rect($x, $y + 1.61, $width, 0.61, 'F');
+                $this->Rect($x_pos, $y_pos + 1.61, $width, 0.61, 'F');
                 break;
             case 'down':
                 $this->SetFillColor(192, 192, 192);
-                $this->Rect($x, $y, $width, 0.61, 'F');
+                $this->Rect($x_pos, $y_pos, $width, 0.61, 'F');
                 $this->SetFillColor(96, 96, 96);
-                $this->Rect($x, $y + 0.61, $width, 1, 'F');
+                $this->Rect($x_pos, $y_pos + 0.61, $width, 1, 'F');
                 $this->SetFillColor(0, 0, 0);
-                $this->Rect($x, $y + 1.61, $width, 0.61, 'F');
+                $this->Rect($x_pos, $y_pos + 1.61, $width, 0.61, 'F');
                 break;
         }
         $this->ln(1.71);
@@ -195,32 +195,34 @@ class Resume extends \FPDF
                 $counter++;
             }
             $this->ln(4);
-        } else {
-            foreach ($section->array as $section2) {
+
+            return;
+        }
+
+        foreach ($section->array as $section2) {
+            $this->SetFont('PragatiNarrow', 'B', 10);
+            $this->BulletItem(1, ' ', $section2->title, $section2->date);
+            $this->SetFont('PragatiNarrow', 'I', 8.5);
+            $this->BulletItem(1, ' ', $section2->description);
+            $this->ln(0.4);
+            if (!property_exists($section2, 'array') || !is_array($section2->array)) {
+                continue;
+            }
+
+            foreach ($section2->array as $section3) {
                 $this->SetFont('PragatiNarrow', 'B', 10);
-                $this->BulletItem(1, ' ', $section2->title, $section2->date);
-                $this->SetFont('PragatiNarrow', 'I', 8.5);
-                $this->BulletItem(1, ' ', $section2->description);
-                $this->ln(0.4);
-                if (!property_exists($section2, 'array') || !is_array($section2->array)) {
+                $this->BulletItem(2, null, $section3->title);
+                if (!property_exists($section3, 'array')) {
+                    $this->ln(0.4);
                     continue;
                 }
-
-                foreach ($section2->array as $section3) {
-                    $this->SetFont('PragatiNarrow', 'B', 10);
-                    $this->BulletItem(2, null, $section3->title);
-                    if (!property_exists($section3, 'array')) {
-                        $this->ln(0.4);
-                        continue;
-                    }
-                    foreach ($section3->array as $section4) {
-                        $this->SetFont('PragatiNarrow', '', 10);
-                        $this->BulletItem(3, '—', $section4);
-                    }
-                    $this->ln(0.4);
+                foreach ($section3->array as $section4) {
+                    $this->SetFont('PragatiNarrow', '', 10);
+                    $this->BulletItem(3, '—', $section4);
                 }
                 $this->ln(0.4);
             }
+            $this->ln(0.4);
         }
     }
 
