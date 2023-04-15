@@ -2,7 +2,7 @@
 #######################################
 # Build (Base Image)
 #######################################
-FROM php:7.4-fpm-buster AS build
+FROM php:8.2-fpm-buster AS build
 
 ARG ENV=DEV
 ARG user=root
