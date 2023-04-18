@@ -201,7 +201,7 @@ class Resume extends \FPDF
 
         foreach ($section->array as $section2) {
             $this->SetFont('PragatiNarrow', 'B', 10);
-            $this->BulletItem(1, ' ', $section2->title, $section2->date);
+            $this->BulletItem(1, ' ', $section2->title ?? '', $section2->date ?? '');
             $this->SetFont('PragatiNarrow', 'I', 8.5);
             $this->BulletItem(1, ' ', $section2->description);
             $this->ln(0.4);
@@ -211,7 +211,7 @@ class Resume extends \FPDF
 
             foreach ($section2->array as $section3) {
                 $this->SetFont('PragatiNarrow', 'B', 10);
-                $this->BulletItem(2, null, $section3->title);
+                $this->BulletItem(2, null, $section3->title ?? '', $section3->date ?? '');
                 if (!property_exists($section3, 'array')) {
                     $this->ln(0.4);
                     continue;
