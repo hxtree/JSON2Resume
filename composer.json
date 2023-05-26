@@ -13,5 +13,14 @@
         "psr-4": {
           "Hxtree\\Json2Resume\\": "src"
         }
+    },
+    "scripts": {
+        "qc" : [
+            "@code-standards-apply"
+        ],
+        "code-standards-apply": [
+            "php-cs-fixer fix --rules=@Symfony,-@PSR1,-blank_line_before_statement --using-cache=no src/",
+            "php-cs-fixer fix --rules=@Symfony,-@PSR1,-blank_line_before_statement --using-cache=no public/index.php"
+        ]
     }
 }

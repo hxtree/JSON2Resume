@@ -8,12 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__.'/../vendor/autoload.php';
 
 use Hxtree\Json2Resume\Resume;
 
-define('FPDF_FONTPATH', __DIR__ . '/font');
+define('FPDF_FONTPATH', __DIR__.'/font');
 
 $pdf = new Resume();
 

@@ -31,6 +31,10 @@
     "Talk about your experience",
     "Core competencies include: Microsoft Word, etc."
   ],
+  "competencies": [
+    "Leadership",
+    "Rainbow Unicorn"
+  ],
   "sections": [
     {
       "title": "Professional Experience",
@@ -46,6 +50,10 @@
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 "Ipsum dolor sit amet consectetur adipiscing elit.",
                 "Et malesuada fames ac turpis egestas integer eget aliquet. Metus vulputate eu scelerisque felis imperdiet proin."
+              ],
+              "technologies": [
+                "AWS",
+                "GoLang"
               ]
             }
           ]
