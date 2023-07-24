@@ -49,15 +49,15 @@ Prerequisite: install [Docker](https://docs.docker.com/get-docker/) and Docker C
     docker exec --user root json2resume-php-fpm composer update -d .
     ```
 
-# Contributing
+## Contributing
 
 JSON2Resume warmly welcomes contributions from the community. Whether you're interested in fixing bugs, adding new features, or improving documentation, your contributions are valuable. To contribute, follow our guidelines outlined in CONTRIBUTING.md.
 
-# License
+## License
 
 JSON2Resume is licensed under the MIT License. Feel free to use, modify, and distribute the tool as per the terms of the license.
 
-# Contact
+## Contact
 
 If you have any questions, feedback, or need support, please feel free to reach out via GitHub issues.
 
